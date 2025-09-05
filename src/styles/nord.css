@@ -322,6 +322,87 @@ input[type="search"]:focus {
   outline-offset: 2px;
 }
 
+/* Hero content styling for splash page */
+.hero-content {
+  max-width: 48rem;
+  margin: 3rem auto 0;
+  padding: 2rem;
+  color: var(--sl-color-text) !important;
+  line-height: 1.6;
+}
+
+.hero-content h2,
+.hero-content h3 {
+  color: var(--sl-color-text) !important;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content h2:first-child {
+  margin-top: 0;
+}
+
+.hero-content p,
+.hero-content li {
+  color: var(--sl-color-text) !important;
+}
+
+.hero-content a {
+  color: var(--sl-color-text-accent) !important;
+  text-decoration: underline;
+}
+
+.hero-content a:hover,
+.hero-content a:focus {
+  color: var(--sl-color-link) !important;
+}
+
+.hero-content ul {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.hero-content strong {
+  color: var(--sl-color-text-accent) !important;
+  font-weight: 600;
+}
+
+/* Enhanced typography for hero content */
+.hero-content h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  border-bottom: 2px solid var(--sl-color-hairline);
+  padding-bottom: 0.5rem;
+}
+
+.hero-content h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.hero-content li {
+  margin: 0.5rem 0;
+}
+
+/* Responsive hero content */
+@media (max-width: 768px) {
+  .hero-content {
+    padding: 1rem;
+    margin-top: 2rem;
+  }
+  
+  .hero-content h2 {
+    font-size: 1.5rem;
+  }
+  
+  .hero-content h3 {
+    font-size: 1.1rem;
+  }
+}
+
 /* Additional refinements for better contrast and readability */
 :root[data-theme="light"] {
   --sl-color-gray-1: var(--nord6);
