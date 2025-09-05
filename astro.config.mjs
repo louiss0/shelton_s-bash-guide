@@ -10,8 +10,32 @@ export default defineConfig({
 			title: "Shelton's Bash Guide",
 			customCss: ['./src/styles/nord.css'],
 			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }],
-			// Sidebar will be populated after content is created
-			sidebar: [],
+			sidebar: [
+				{
+					label: 'Start Here',
+					items: [
+						{ label: 'Overview', link: '/' },
+					],
+				},
+				{
+					label: 'Concepts',
+					items: [
+						{ label: 'Variables', link: '/concepts/variables/' },
+						{ label: 'Functions', link: '/concepts/functions/' },
+						{ label: 'Conditionals', link: '/concepts/conditionals/' },
+						{ label: 'Loops', link: '/concepts/loops/' },
+						{ label: 'File Operations', link: '/concepts/file-operations/' },
+					],
+				},
+				{
+					label: 'Reference',
+					items: [
+						{ label: 'Index', link: '/reference/' },
+						// Reference sections will be expanded later
+					],
+				},
+				// Explanation section will be added later
+			],
 		}),
 	],
 	markdown: {
