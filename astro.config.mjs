@@ -31,14 +31,18 @@ export default defineConfig({
 					label: 'Reference',
 					items: [
 						{ label: 'Index', link: '/reference/' },
-						{
-							label: 'Builtins',
-							items: [
-								{ label: 'declare', link: '/reference/builtins/declare/' },
-								{ label: 'echo', link: '/reference/builtins/echo/' },
-								{ label: 'read', link: '/reference/builtins/read/' },
-							],
-						},
+        {
+          label: "Builtins",
+          items: [
+            { label: "declare", link: "/reference/builtins/declare/" },
+            { label: "echo", link: "/reference/builtins/echo/" },
+            { label: "export", link: "/reference/builtins/export/" },
+            { label: "local", link: "/reference/builtins/local/" },
+            { label: "read", link: "/reference/builtins/read/" },
+            { label: "test / [", link: "/reference/builtins/test/" },
+            { label: "unset", link: "/reference/builtins/unset/" },
+          ],
+        },
 						{
 							label: 'Syntax',
 							items: [
@@ -46,10 +50,13 @@ export default defineConfig({
 								{ label: 'Redirection', link: '/reference/syntax/redirection/' },
 							],
 						},
-						{
-							label: 'Keywords',
-							items: [
-								{ label: 'if', link: '/reference/keywords/if/' },
+        {
+          label: "Keywords",
+          items: [
+            { label: "[[", link: "/reference/keywords/double-bracket/" },
+            { label: "if", link: "/reference/keywords/if/" },
+          ],
+        },
 							],
 						},
 					],
