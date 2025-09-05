@@ -7,7 +7,7 @@ hero:
     file: ../../assets/houston.webp
   actions:
     - text: Explore Concepts
-      link: /concepts/variables/
+      link: /concepts/data-types/
       icon: right-arrow
     - text: Browse Reference
       link: /reference/
@@ -38,4 +38,4 @@ Powered by Starlight's built-in search - just press **/** or **Ctrl+K** to searc
 
 ## 🚀 Getting Started
 
-Start with [Variables](/concepts/variables/) to learn the fundamentals, or jump to the [Reference](/reference/) for quick lookups of specific commands and syntax.
+Start with [Data Types](/concepts/data-types/) to understand Bash's type system fundamentals, or jump to the [Reference](/reference/) for quick lookups of specific commands and syntax.

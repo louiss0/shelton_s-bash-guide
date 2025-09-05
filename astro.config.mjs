@@ -21,6 +21,7 @@ export default defineConfig({
 				{
 					label: 'Concepts',
 					items: [
+						{ label: 'Data Types', link: '/concepts/data-types/' },
 						{ label: 'Variables', link: '/concepts/variables/' },
 						{ label: 'Functions', link: '/concepts/functions/' },
 						{ label: 'Conditionals', link: '/concepts/conditionals/' },
