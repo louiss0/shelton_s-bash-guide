@@ -1,0 +1,106 @@
+:root {
+  --nord0: #2E3440;
+  --nord1: #3B4252;
+  --nord2: #434C5E;
+  --nord3: #4C566A;
+  --nord4: #D8DEE9;
+  --nord5: #E5E9F0;
+  --nord6: #ECEFF4;
+  --nord7: #8FBCBB;
+  --nord8: #88C0D0;
+  --nord9: #81A1C1;
+  --nord10: #5E81AC;
+  --nord11: #BF616A;
+  --nord12: #D08770;
+  --nord13: #EBCB8B;
+  --nord14: #A3BE8C;
+  --nord15: #B48EAD;
+}
+
+/* Light (Nord Snow Storm-based) */
+:root[data-theme="light"] {
+  --sl-color-bg: var(--nord6);
+  --sl-color-bg-soft: var(--nord5);
+  --sl-color-text: var(--nord0);
+  --sl-color-text-invert: var(--nord6);
+  --sl-color-accent: var(--nord8);
+  --sl-color-text-accent: var(--nord10);
+  --sl-color-link: var(--nord10);
+  --sl-color-hairline: var(--nord5);
+  --sl-color-backdrop: rgba(46, 52, 64, 0.5);
+  --sl-color-code-bg: var(--nord5);
+  --sl-color-code-text: var(--nord0);
+  --sl-color-nav: var(--nord6);
+  --sl-color-sidebar-bg: var(--nord6);
+  --sl-color-card-bg: var(--nord6);
+  --sl-color-button-bg: var(--nord8);
+  --sl-color-button-text: var(--nord6);
+  --sl-color-button-border: transparent;
+  --sl-color-focus-ring: var(--nord8);
+}
+
+/* Dark (Nord Polar Night-based) */
+:root[data-theme="dark"] {
+  --sl-color-bg: var(--nord0);
+  --sl-color-bg-soft: var(--nord1);
+  --sl-color-text: var(--nord4);
+  --sl-color-text-invert: var(--nord0);
+  --sl-color-accent: var(--nord8);
+  --sl-color-text-accent: var(--nord8);
+  --sl-color-link: var(--nord8);
+  --sl-color-hairline: var(--nord2);
+  --sl-color-backdrop: rgba(236, 239, 244, 0.45);
+  --sl-color-code-bg: var(--nord1);
+  --sl-color-code-text: var(--nord4);
+  --sl-color-nav: var(--nord0);
+  --sl-color-sidebar-bg: var(--nord0);
+  --sl-color-card-bg: var(--nord1);
+  --sl-color-button-bg: var(--nord8);
+  --sl-color-button-text: var(--nord0);
+  --sl-color-button-border: transparent;
+  --sl-color-focus-ring: var(--nord8);
+}
+
+/* Code block fine-tuning */
+pre, code {
+  font-variant-ligatures: none;
+}
+
+pre {
+  background: var(--sl-color-code-bg) !important;
+  color: var(--sl-color-code-text) !important;
+  border: 1px solid var(--sl-color-hairline);
+}
+
+a {
+  color: var(--sl-color-link);
+}
+
+/* Additional refinements for better contrast and readability */
+:root[data-theme="light"] {
+  --sl-color-gray-1: var(--nord6);
+  --sl-color-gray-2: var(--nord5);
+  --sl-color-gray-3: var(--nord4);
+  --sl-color-gray-4: var(--nord3);
+  --sl-color-gray-5: var(--nord2);
+  --sl-color-gray-6: var(--nord1);
+}
+
+:root[data-theme="dark"] {
+  --sl-color-gray-1: var(--nord1);
+  --sl-color-gray-2: var(--nord2);
+  --sl-color-gray-3: var(--nord3);
+  --sl-color-gray-4: var(--nord4);
+  --sl-color-gray-5: var(--nord5);
+  --sl-color-gray-6: var(--nord6);
+}
+
+/* Enhance syntax highlighting for Bash */
+.shiki .line {
+  border-left: 2px solid transparent;
+}
+
+.shiki .highlighted {
+  background-color: rgba(136, 192, 208, 0.1);
+  border-left-color: var(--nord8);
+}
