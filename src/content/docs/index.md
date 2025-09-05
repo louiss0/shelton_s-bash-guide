@@ -1,7 +1,6 @@
 ---
 title: Shelton's Bash Guide
 description: A concise, practical Bash guide with Diátaxis-aligned content, themed with Nord colors (light and dark).
-template: splash
 hero:
   tagline: A developer-focused Bash guide with beautiful Nord theming and powerful search.
   image:
