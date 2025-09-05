@@ -1,0 +1,55 @@
+name: Preview Build
+
+on:
+  pull_request:
+    branches: [develop]
+    types: [opened, synchronize, reopened]
+
+jobs:
+  preview:
+    name: Build Preview
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.draft == false
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'pnpm'
+          
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: latest
+          
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+        
+      - name: Quality checks
+        run: |
+          echo "🔍 Running quality checks for preview..."
+          pnpm astro check
+          pnpm spell:check
+          echo "✅ Quality checks passed"
+        
+      - name: Build preview
+        run: pnpm build
+        
+      - name: Generate preview summary
+        run: |
+          echo "## 📖 Documentation Preview" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "✅ **Quality Checks:** Passed" >> $GITHUB_STEP_SUMMARY
+          echo "✅ **Spell Check:** Passed" >> $GITHUB_STEP_SUMMARY
+          echo "✅ **Build:** Successful" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "The documentation builds successfully and passes all quality gates." >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Files Changed" >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
+          git diff --name-only origin/develop...HEAD | grep -E '\.(md|mdx)$' || echo "No documentation files changed"
+          echo "\`\`\`" >> $GITHUB_STEP_SUMMARY

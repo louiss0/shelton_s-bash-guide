@@ -4,9 +4,10 @@ import starlight from '@astrojs/starlight';
 
 // https://astro.build/config
 export default defineConfig({
+	site: 'https://github.io', // Will be updated when repository URL is known
 	integrations: [
 		starlight({
-			title: 'My Docs',
+			title: "Shelton's Bash Guide",
 			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }],
 			sidebar: [
 				{
