@@ -16,6 +16,8 @@ Use JPD if installed; otherwise use PNPM.
 - Build for production: `jpd run build` | `pnpm build`
 - Preview production build: `jpd run preview` | `pnpm preview`
 - Type and content checks: `jpd run astro check` | `pnpm astro check`
+- Spell check: `jpd run spell:check` | `pnpm spell:check`
+- Spell check with suggestions: `jpd run spell:fix` | `pnpm spell:fix`
 
 **Astro CLI:**
 - Add integrations: `jpd run astro add <integration>` | `pnpm astro add <integration>`
@@ -94,6 +96,7 @@ sidebar:
 
 **Quality Gates:**
 - Run `pnpm astro check` before committing (catches broken links, typos)
+- Run `pnpm spell:check` before committing (validates spelling)
 - Preview content locally with `pnpm dev` to verify formatting
 - Test all code examples in the documented environment
 - Verify navigation flow makes sense to newcomers
@@ -158,7 +161,13 @@ Examples:
 - Add integrations: `pnpm astro add <integration>` (sitemap, rss, etc.)
 - Check for broken links: `pnpm astro check`
 
+**Spell Checking:**
+- Configuration: `cspell.json` - includes technical dictionaries and custom words
+- Add project-specific terms to the `words` array in `cspell.json`
+- Code blocks, inline code, and URLs are automatically ignored
+
 **Troubleshooting:**
 - Content not appearing: verify frontmatter and sidebar configuration
 - Build errors: run `pnpm astro check` for diagnostics
+- Spell check failures: add technical terms to `cspell.json` words array
 - Node version issues: ensure Node ≥ 18.14, prefer LTS versions

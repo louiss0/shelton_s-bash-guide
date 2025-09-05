@@ -8,6 +8,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "check": "astro check",
+    "spell:check": "cspell \"src/content/docs/**/*.{md,mdx}\" \"*.md\"",
+    "spell:fix": "cspell \"src/content/docs/**/*.{md,mdx}\" \"*.md\" --show-suggestions",
     "astro": "astro"
   },
   "dependencies": {
@@ -16,5 +18,8 @@
     "astro": "^5.6.1",
     "sharp": "^0.34.2",
     "typescript": "^5.9.2"
+  },
+  "devDependencies": {
+    "cspell": "^9.2.1"
   }
 }

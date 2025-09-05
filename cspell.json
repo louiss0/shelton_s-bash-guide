@@ -1,0 +1,72 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "dictionaries": [
+    "en",
+    "en-us",
+    "bash",
+    "companies",
+    "softwareTerms",
+    "typescript",
+    "node",
+    "html",
+    "css",
+    "npm"
+  ],
+  "words": [
+    "Astro",
+    "Starlight",
+    "JPD",
+    "PNPM",
+    "MDX",
+    "frontmatter",
+    "slugs",
+    "autogenerate",
+    "navbar",
+    "sidebar",
+    "github",
+    "workflow",
+    "workflows",
+    "subcommand",
+    "subcommands",
+    "Shelton",
+    "shellscripting",
+    "bashscripting",
+    "bashguide",
+    "dotfiles",
+    "yadm",
+    "flatpak",
+    "nix",
+    "nixpkgs",
+    "pwsh",
+    "powershell",
+    "hotfix",
+    "hotfixes",
+    "Diátaxis"
+  ],
+  "ignoreWords": [],
+  "import": [],
+  "files": [
+    "src/content/docs/**/*.{md,mdx}",
+    "*.md"
+  ],
+  "ignorePaths": [
+    "node_modules/**",
+    "dist/**",
+    ".git/**",
+    "package-lock.json",
+    "pnpm-lock.yaml"
+  ],
+  "overrides": [
+    {
+      "filename": "**/*.{md,mdx}",
+      "ignoreRegExpList": [
+        "/```[\\s\\S]*?```/g",
+        "/`[^`]*`/g",
+        "/\\[.*?\\]\\(.*?\\)/g",
+        "/https?:\\/\\/[^\\s]*/g",
+        "/#[a-zA-Z0-9-_]+/g"
+      ]
+    }
+  ]
+}
