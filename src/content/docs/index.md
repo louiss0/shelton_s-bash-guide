@@ -5,7 +5,8 @@ template: splash
 hero:
   tagline: A developer-focused Bash guide with beautiful Nord theming and powerful search.
   image:
-    file: ../../assets/houston.webp
+    file: ../../assets/bash-terminal.svg
+    alt: Terminal window displaying 'bash' with Nord color scheme
   actions:
     - text: Explore Concepts
       link: /concepts/data-types/

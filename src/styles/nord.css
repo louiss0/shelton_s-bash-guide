@@ -387,6 +387,26 @@ input[type="search"]:focus {
   margin: 0.5rem 0;
 }
 
+/* Custom hero image styling */
+.hero img,
+.hero-image img,
+[data-astro-cid] img {
+  width: 60% !important;
+  max-width: 480px !important;
+  height: auto !important;
+  margin: 0 auto !important;
+  display: block !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 12px rgba(46, 52, 64, 0.3) !important;
+}
+
+/* Dark theme shadow adjustment */
+:root[data-theme="dark"] .hero img,
+:root[data-theme="dark"] .hero-image img,
+:root[data-theme="dark"] [data-astro-cid] img {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
+}
+
 /* Responsive hero content */
 @media (max-width: 768px) {
   .hero-content {
@@ -400,6 +420,13 @@ input[type="search"]:focus {
   
   .hero-content h3 {
     font-size: 1.1rem;
+  }
+  
+  .hero img,
+  .hero-image img,
+  [data-astro-cid] img {
+    width: 80% !important;
+    max-width: 320px !important;
   }
 }
 
