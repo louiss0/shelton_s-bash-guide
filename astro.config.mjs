@@ -31,10 +31,36 @@ export default defineConfig({
 					label: 'Reference',
 					items: [
 						{ label: 'Index', link: '/reference/' },
-						// Reference sections will be expanded later
+						{
+							label: 'Builtins',
+							items: [
+								{ label: 'declare', link: '/reference/builtins/declare/' },
+								{ label: 'echo', link: '/reference/builtins/echo/' },
+								{ label: 'read', link: '/reference/builtins/read/' },
+							],
+						},
+						{
+							label: 'Syntax',
+							items: [
+								{ label: 'Quoting', link: '/reference/syntax/quoting/' },
+								{ label: 'Redirection', link: '/reference/syntax/redirection/' },
+							],
+						},
+						{
+							label: 'Keywords',
+							items: [
+								{ label: 'if', link: '/reference/keywords/if/' },
+							],
+						},
 					],
 				},
-				// Explanation section will be added later
+				{
+					label: 'Explanations',
+					items: [
+						{ label: 'Streams & Processes', link: '/explanations/streams-and-processes/' },
+						{ label: 'Quoting & Expansion', link: '/explanations/quoting-and-expansion/' },
+					],
+				},
 			],
 		}),
 	],
