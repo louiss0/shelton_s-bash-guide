@@ -4,10 +4,11 @@ import starlight from '@astrojs/starlight';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://github.io', // Will be updated when repository URL is known
+	site: 'https://shelton-bash-guide.netlify.app',
 	integrations: [
 		starlight({
 			title: "Shelton's Bash Guide",
+			description: 'A developer-focused Bash guide with beautiful Nord theming, comprehensive reference, and practical examples.',
 			customCss: ['./src/styles/nord.css'],
 			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }],
 			sidebar: [
