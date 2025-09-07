@@ -4,13 +4,13 @@ import starlight from '@astrojs/starlight';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://shelton-bash-guide.netlify.app',
+	site: 'https://shelton_s-bash-guide.onrender.com',
 	integrations: [
 		starlight({
 			title: "Shelton's Bash Guide",
 			description: 'A developer-focused Bash guide with beautiful Nord theming, comprehensive reference, and practical examples.',
 			customCss: ['./src/styles/nord.css'],
-			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }],
+			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/louiss0/shelton_s-bash-guide' }],
 			sidebar: [
 				{
 					label: 'Start Here',
@@ -79,8 +79,8 @@ export default defineConfig({
 		}),
 	],
 	markdown: {
-		shikiConfig: {
-			langs: ['bash', 'sh', 'shell', 'zsh'],
+
+		shikiConfig: {	
 			themes: {
 				light: 'nord',
 				dark: 'nord',
