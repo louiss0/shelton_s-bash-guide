@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Main Branch Quality Check
 
 on:
   push:
@@ -7,16 +7,10 @@ on:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
 
 jobs:
-  build:
-    name: Build Documentation
+  quality-check:
+    name: Lint and Quality Check
     runs-on: ubuntu-latest
     
     steps:
@@ -37,33 +31,20 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
         
-      - name: Quality checks before deployment
+      - name: Run Astro type and content checks
         run: |
-          echo "🔍 Running pre-deployment quality checks..."
+          echo "🔍 Running Astro type and content checks..."
           pnpm astro check
+          echo "✅ Astro checks passed"
+        
+      - name: Run spell check
+        run: |
+          echo "🔤 Running spell check..."
           pnpm spell:check
-          echo "✅ All quality checks passed"
+          echo "✅ Spell check passed"
         
-      - name: Build documentation
-        run: pnpm build
-        
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-        
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./dist
-
-  deploy:
-    name: Deploy to Pages
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Test build (no deployment)
+        run: |
+          echo "🏗️ Testing build process..."
+          pnpm build
+          echo "✅ Build test successful"

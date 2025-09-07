@@ -35,19 +35,8 @@ jobs:
       - name: Run spell check
         run: pnpm spell:check
         
-      - name: Build documentation
-        run: pnpm build
-        
-      - name: Test build output
+      - name: Quality check summary
         run: |
-          if [ ! -d "dist" ]; then
-            echo "❌ Build failed - no dist directory found"
-            exit 1
-          fi
-          
-          if [ ! -f "dist/index.html" ]; then
-            echo "❌ Build failed - no index.html found"
-            exit 1
-          fi
-          
-          echo "✅ Build successful - documentation ready for deployment"
+          echo "🎉 All linting and quality checks completed successfully!"
+          echo "✅ Astro type and content checks passed"
+          echo "✅ Spell check passed"

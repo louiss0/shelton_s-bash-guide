@@ -1,4 +1,4 @@
-name: Preview Build
+name: Pull Request Lint Check
 
 on:
   pull_request:
@@ -6,8 +6,8 @@ on:
     types: [opened, synchronize, reopened]
 
 jobs:
-  preview:
-    name: Build Preview
+  lint-check:
+    name: Lint and Quality Check
     runs-on: ubuntu-latest
     if: github.event.pull_request.draft == false
     
@@ -29,27 +29,28 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
         
-      - name: Quality checks
+      - name: Run Astro type and content checks
         run: |
-          echo "🔍 Running quality checks for preview..."
+          echo "🔍 Running Astro type and content checks..."
           pnpm astro check
-          pnpm spell:check
-          echo "✅ Quality checks passed"
+          echo "✅ Astro checks passed"
         
-      - name: Build preview
-        run: pnpm build
-        
-      - name: Generate preview summary
+      - name: Run spell check
         run: |
-          echo "## 📖 Documentation Preview" >> $GITHUB_STEP_SUMMARY
+          echo "🔤 Running spell check..."
+          pnpm spell:check
+          echo "✅ Spell check passed"
+        
+      - name: Generate lint summary
+        run: |
+          echo "## 🔍 Lint Check Results" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "✅ **Quality Checks:** Passed" >> $GITHUB_STEP_SUMMARY
+          echo "✅ **Astro Type/Content Checks:** Passed" >> $GITHUB_STEP_SUMMARY
           echo "✅ **Spell Check:** Passed" >> $GITHUB_STEP_SUMMARY
-          echo "✅ **Build:** Successful" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "The documentation builds successfully and passes all quality gates." >> $GITHUB_STEP_SUMMARY
+          echo "All linting and quality checks have passed successfully." >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "### Files Changed" >> $GITHUB_STEP_SUMMARY
+          echo "### Documentation Files Changed" >> $GITHUB_STEP_SUMMARY
           echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
           git diff --name-only origin/develop...HEAD | grep -E '\.(md|mdx)$' || echo "No documentation files changed"
           echo "\`\`\`" >> $GITHUB_STEP_SUMMARY

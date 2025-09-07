@@ -10,7 +10,7 @@ export default defineConfig({
 			title: "Shelton's Bash Guide",
 			description: 'A developer-focused Bash guide with beautiful Nord theming, comprehensive reference, and practical examples.',
 			customCss: ['./src/styles/nord.css'],
-			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/louiss0/shelton-s-bash-guide' }],
+			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/louiss0/shelton_s-bash-guide' }],
 			sidebar: [
 				{
 					label: 'Start Here',
