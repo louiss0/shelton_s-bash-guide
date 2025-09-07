@@ -65,6 +65,7 @@ export default defineConfig({
 					label: 'How-To Guides',
 					items: [
 						{ label: 'Run Script in Subproject', link: '/how-to/run-in-subproject/' },
+						{ label: 'Bash Scripting Best Practices', link: '/how-to/scripting-best-practices/' },
 					],
 				},
 				{
