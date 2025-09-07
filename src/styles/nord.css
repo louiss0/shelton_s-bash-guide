@@ -1,0 +1,462 @@
+:root {
+  --nord0: #2E3440;
+  --nord1: #3B4252;
+  --nord2: #434C5E;
+  --nord3: #4C566A;
+  --nord4: #D8DEE9;
+  --nord5: #E5E9F0;
+  --nord6: #ECEFF4;
+  --nord7: #8FBCBB;
+  --nord8: #88C0D0;
+  --nord9: #81A1C1;
+  --nord10: #5E81AC;
+  --nord11: #BF616A;
+  --nord12: #D08770;
+  --nord13: #EBCB8B;
+  --nord14: #A3BE8C;
+  --nord15: #B48EAD;
+}
+
+/* Light (Nord Snow Storm-based) */
+:root[data-theme="light"] {
+  --sl-color-bg: var(--nord6);
+  --sl-color-bg-soft: var(--nord5);
+  --sl-color-text: var(--nord0);
+  --sl-color-text-invert: var(--nord6);
+  --sl-color-accent: var(--nord8);
+  --sl-color-text-accent: var(--nord10);
+  --sl-color-link: var(--nord10);
+  --sl-color-hairline: var(--nord4);
+  --sl-color-backdrop: rgba(46, 52, 64, 0.5);
+  --sl-color-code-bg: var(--nord4);
+  --sl-color-code-text: var(--nord0);
+  --sl-color-nav: var(--nord6);
+  --sl-color-sidebar-bg: var(--nord6);
+  --sl-color-card-bg: var(--nord6);
+  --sl-color-button-bg: var(--nord8);
+  --sl-color-button-text: var(--nord3);
+  --sl-color-button-border: transparent;
+  --sl-color-focus-ring: var(--nord8);
+}
+
+/* Dark (Nord Polar Night-based) */
+:root[data-theme="dark"] {
+  --sl-color-bg: var(--nord0);
+  --sl-color-bg-soft: var(--nord1);
+  --sl-color-text: var(--nord4);
+  --sl-color-text-invert: var(--nord0);
+  --sl-color-accent: var(--nord8);
+  --sl-color-text-accent: var(--nord8);
+  --sl-color-link: var(--nord8);
+  --sl-color-hairline: var(--nord2);
+  --sl-color-backdrop: rgba(236, 239, 244, 0.45);
+  --sl-color-code-bg: var(--nord1);
+  --sl-color-code-text: var(--nord5);
+  --sl-color-nav: var(--nord0);
+  --sl-color-sidebar-bg: var(--nord0);
+  --sl-color-card-bg: var(--nord1);
+  --sl-color-button-bg: var(--nord8);
+  --sl-color-button-text: var(--nord0);
+  --sl-color-button-border: transparent;
+  --sl-color-focus-ring: var(--nord8);
+}
+
+/* Code block fine-tuning */
+pre, code {
+  font-variant-ligatures: none;
+}
+
+/* Ensure code blocks are visible with proper contrast */
+pre {
+  background: var(--sl-color-code-bg) !important;
+  color: var(--sl-color-code-text) !important;
+  border: 1px solid var(--sl-color-hairline);
+}
+
+/* Force code text visibility in all contexts */
+pre code,
+.expressive-code pre,
+.shiki,
+.shiki code,
+code {
+  color: var(--sl-color-code-text) !important;
+  background: transparent !important;
+}
+
+/* Inline code styling */
+code:not(pre code) {
+  background: var(--sl-color-code-bg) !important;
+  color: var(--sl-color-code-text) !important;
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+  font-size: 0.875em;
+}
+
+/* Shiki syntax highlighting overrides */
+.shiki {
+  background: var(--sl-color-code-bg) !important;
+}
+
+.shiki code {
+  color: var(--sl-color-code-text) !important;
+}
+
+a {
+  color: var(--sl-color-link);
+}
+
+/* Sidebar link styling fixes */
+.sidebar a,
+.sidebar-content a,
+[data-theme="light"] .sidebar a,
+[data-theme="dark"] .sidebar a {
+  color: var(--sl-color-text) !important;
+}
+
+.sidebar a:hover,
+.sidebar a:focus,
+.sidebar-content a:hover,
+.sidebar-content a:focus,
+[data-theme="light"] .sidebar a:hover,
+[data-theme="light"] .sidebar a:focus,
+[data-theme="dark"] .sidebar a:hover,
+[data-theme="dark"] .sidebar a:focus {
+  color: var(--sl-color-text-accent) !important;
+  background-color: rgba(136, 192, 208, 0.1) !important;
+}
+
+.sidebar a[aria-current="page"],
+.sidebar-content a[aria-current="page"],
+[data-theme="light"] .sidebar a[aria-current="page"],
+[data-theme="dark"] .sidebar a[aria-current="page"] {
+  color: var(--sl-color-text-accent) !important;
+  background-color: rgba(136, 192, 208, 0.15) !important;
+}
+
+/* More specific Starlight selectors */
+.sidebar nav a,
+.sidebar-pane a,
+starlight-sidebar a,
+.sl-sidebar a {
+  color: var(--sl-color-text) !important;
+}
+
+.sidebar nav a:hover,
+.sidebar nav a:focus,
+.sidebar-pane a:hover,
+.sidebar-pane a:focus,
+starlight-sidebar a:hover,
+starlight-sidebar a:focus,
+.sl-sidebar a:hover,
+.sl-sidebar a:focus {
+  color: var(--sl-color-text-accent) !important;
+  background-color: rgba(136, 192, 208, 0.1) !important;
+}
+
+/* Universal sidebar link overrides */
+[data-sidebar] a,
+[class*="sidebar"] a,
+[class*="nav"] a,
+aside a {
+  color: var(--sl-color-text) !important;
+}
+
+[data-sidebar] a:hover,
+[data-sidebar] a:focus,
+[class*="sidebar"] a:hover,
+[class*="sidebar"] a:focus,
+[class*="nav"] a:hover,
+[class*="nav"] a:focus,
+aside a:hover,
+aside a:focus {
+  color: var(--sl-color-text-accent) !important;
+  background-color: rgba(136, 192, 208, 0.1) !important;
+}
+
+/* Button styling fixes */
+button,
+.button,
+[role="button"],
+input[type="button"],
+input[type="submit"] {
+  color: var(--sl-color-button-text) !important;
+  background-color: var(--sl-color-button-bg) !important;
+}
+
+button:hover,
+button:focus,
+.button:hover,
+.button:focus,
+[role="button"]:hover,
+[role="button"]:focus {
+  color: var(--sl-color-button-text) !important;
+  background-color: var(--sl-color-text-accent) !important;
+}
+
+/* Card and link button styling */
+.card a,
+.link-card,
+.card-button,
+.sl-link-card,
+[data-astro-cid] a.card,
+.action-card,
+.hero .actions a {
+  color: var(--sl-color-text-accent) !important;
+}
+
+.card a:hover,
+.card a:focus,
+.link-card:hover,
+.link-card:focus,
+.card-button:hover,
+.card-button:focus,
+.sl-link-card:hover,
+.sl-link-card:focus,
+[data-astro-cid] a.card:hover,
+[data-astro-cid] a.card:focus,
+.action-card:hover,
+.action-card:focus,
+.hero .actions a:hover,
+.hero .actions a:focus {
+  color: var(--sl-color-button-text) !important;
+  background-color: var(--sl-color-text-accent) !important;
+}
+
+/* Starlight specific hero/landing page buttons */
+.hero-actions a,
+.actions a,
+.action-link,
+.primary-action {
+  color: var(--sl-color-button-text) !important;
+  background-color: var(--sl-color-button-bg) !important;
+  padding: 0.75rem 1.5rem !important;
+  min-height: 3rem !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.5rem !important;
+  border-radius: 0.5rem !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+}
+
+.hero-actions a:hover,
+.hero-actions a:focus,
+.actions a:hover,
+.actions a:focus,
+.action-link:hover,
+.action-link:focus,
+.primary-action:hover,
+.primary-action:focus {
+  color: var(--sl-color-button-text) !important;
+  background-color: var(--sl-color-text-accent) !important;
+}
+
+/* Override minimal variant to match primary buttons */
+.hero-actions a[data-variant="minimal"],
+.actions a[data-variant="minimal"],
+a.minimal {
+  color: var(--sl-color-button-text) !important;
+  background-color: var(--sl-color-button-bg) !important;
+  padding: 0.75rem 1.5rem !important;
+  min-height: 3rem !important;
+  border: none !important;
+}
+
+.hero-actions a[data-variant="minimal"]:hover,
+.hero-actions a[data-variant="minimal"]:focus,
+.actions a[data-variant="minimal"]:hover,
+.actions a[data-variant="minimal"]:focus,
+a.minimal:hover,
+a.minimal:focus {
+  color: var(--sl-color-button-text) !important;
+  background-color: var(--sl-color-text-accent) !important;
+}
+
+/* Search button and modal styling */
+.search-button,
+.search-trigger,
+button[data-open-modal],
+[aria-label*="Search"],
+[aria-label*="search"] {
+  color: var(--sl-color-text) !important;
+  background-color: var(--sl-color-bg-soft) !important;
+  border: 1px solid var(--sl-color-hairline) !important;
+  border-radius: 0.5rem !important;
+  padding: 0.5rem 0.75rem !important;
+}
+
+.search-button:hover,
+.search-button:focus,
+.search-trigger:hover,
+.search-trigger:focus,
+button[data-open-modal]:hover,
+button[data-open-modal]:focus,
+[aria-label*="Search"]:hover,
+[aria-label*="Search"]:focus,
+[aria-label*="search"]:hover,
+[aria-label*="search"]:focus {
+  color: var(--sl-color-text-accent) !important;
+  background-color: var(--sl-color-card-bg) !important;
+  border-color: var(--sl-color-text-accent) !important;
+}
+
+/* Search modal and input styling */
+.search-modal,
+.search-dialog {
+  background-color: var(--sl-color-bg) !important;
+  border: 1px solid var(--sl-color-hairline) !important;
+}
+
+.search-input,
+input[type="search"] {
+  color: var(--sl-color-text) !important;
+  background-color: var(--sl-color-bg-soft) !important;
+  border: 1px solid var(--sl-color-hairline) !important;
+}
+
+.search-input:focus,
+input[type="search"]:focus {
+  border-color: var(--sl-color-text-accent) !important;
+  outline: 2px solid var(--sl-color-focus-ring) !important;
+  outline-offset: 2px;
+}
+
+/* Hero content styling for splash page */
+.hero-content {
+  max-width: 48rem;
+  margin: 3rem auto 0;
+  padding: 2rem;
+  color: var(--sl-color-text) !important;
+  line-height: 1.6;
+}
+
+
+
+.hero-content h2,
+.hero-content h3 {
+  color: var(--sl-color-text) !important;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content h2:first-child {
+  margin-top: 0;
+}
+
+.hero-content p,
+.hero-content li {
+  color: var(--sl-color-text) !important;
+}
+
+.hero-content a {
+  color: var(--sl-color-text-accent) !important;
+  text-decoration: underline;
+}
+
+.hero-content a:hover,
+.hero-content a:focus {
+  color: var(--sl-color-link) !important;
+}
+
+.hero-content ul {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.hero-content strong {
+  color: var(--sl-color-text-accent) !important;
+  font-weight: 600;
+}
+
+/* Enhanced typography for hero content */
+.hero-content h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  border-bottom: 2px solid var(--sl-color-hairline);
+  padding-bottom: 0.5rem;
+}
+
+.hero-content h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.hero-content li {
+  margin: 0.5rem 0;
+}
+
+/* Custom hero image styling */
+.hero img,
+.hero-image img,
+[data-astro-cid] img {
+  width: 60% !important;
+  max-width: 480px !important;
+  height: auto !important;
+  margin: 0 auto !important;
+  display: block !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 12px rgba(46, 52, 64, 0.3) !important;
+}
+
+/* Dark theme shadow adjustment */
+:root[data-theme="dark"] .hero img,
+:root[data-theme="dark"] .hero-image img,
+:root[data-theme="dark"] [data-astro-cid] img {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Responsive hero content */
+@media (max-width: 768px) {
+  .hero-content {
+    padding: 1rem;
+    margin-top: 2rem;
+  }
+  
+  .hero-content h2 {
+    font-size: 1.5rem;
+  }
+  
+  .hero-content h3 {
+    font-size: 1.1rem;
+  }
+  
+  .hero img,
+  .hero-image img,
+  [data-astro-cid] img {
+    width: 80% !important;
+    max-width: 320px !important;
+  }
+}
+
+/* Additional refinements for better contrast and readability */
+:root[data-theme="light"] {
+  --sl-color-gray-1: var(--nord6);
+  --sl-color-gray-2: var(--nord5);
+  --sl-color-gray-3: var(--nord4);
+  --sl-color-gray-4: var(--nord3);
+  --sl-color-gray-5: var(--nord2);
+  --sl-color-gray-6: var(--nord1);
+}
+
+:root[data-theme="dark"] {
+  --sl-color-gray-1: var(--nord1);
+  --sl-color-gray-2: var(--nord2);
+  --sl-color-gray-3: var(--nord3);
+  --sl-color-gray-4: var(--nord4);
+  --sl-color-gray-5: var(--nord5);
+  --sl-color-gray-6: var(--nord6);
+}
+
+/* Enhance syntax highlighting for Bash */
+.shiki .line {
+  border-left: 2px solid transparent;
+}
+
+.shiki .highlighted {
+  background-color: rgba(136, 192, 208, 0.1);
+  border-left-color: var(--nord8);
+}
